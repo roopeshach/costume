@@ -93,7 +93,7 @@ class Rent:
     def display_invoice(self):
 
         print("Costume Rented\n")
-        print("----------------------INVOICE-----------------------\n")
+        print("----------------------INVOICE (Bill) -----------------------\n")
 
         print("{:<20} {:<20} {:<20} {:<20} {:<20} {:<20} {:<20}".format("ID", "Costume Name", "Costume ID", "Customer", "Rent Date", "Days", "Status"))
         print("{:<20} {:<20} {:<20} {:<20} {:<20} {:<20} {:<20}".format(self.id, self.costume_name, self.costume_id, self.customer, self.rent_date, self.days, self.status))

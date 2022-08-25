@@ -64,6 +64,8 @@ def rent_costume():
 #main function with exception handling
 def return_rental():
     id = input("What is the id of the rental? ")
+    fine = input("What is the fine? If None enter 0 ")
+
     rent = Rent.get_rent_by_id(id)
     if rent is None:
         print("No rental found with this id\n")
@@ -73,7 +75,11 @@ def return_rental():
     costume = Costume.get_costume_by_id(rent.costume_id)
     costume.stock = int(costume.stock) + 1
     costume.update_stock(costume.id, costume.stock)
-    print("Rental returned\n\n")
+    #display message with fine if applicable
+    if int(fine) > 0:
+        print("\nRental returned with fine of Rs." + fine+ "\n")
+    else:
+        print("\nRental of "+ rent.customer + " is returned.\n")
 
 
 def main():
